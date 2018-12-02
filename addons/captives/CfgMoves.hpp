@@ -41,7 +41,7 @@ class CfgGesturesMale
  	{
 		class AnimCableStandStart : default
  		{
- 			file = "bnae_animations\anim_cable_stand_start.rtm";
+ 			file = QPATH(rtms\anim_cable_stand_start.rtm);
 			speed=1;
 			looped=0;
 			mask = "handsWeapon_pst";
@@ -67,29 +67,26 @@ class CfgGesturesMale
  		};
 		class AnimCableStandLoop : AnimCableStandStart
  		{
- 			file = "bnae_animations\anim_cable_stand_loop.rtm";
+ 			file = QPATH(rtms\anim_cable_stand_loop.rtm);
 			speed=0.06;
 			looped=1;
  		};
 		class AnimCableStandEnd : AnimCableStandStart
  		{
- 			file = "bnae_animations\anim_cable_stand_end.rtm";
+ 			file = QPATH(rtms\anim_cable_stand_end.rtm);
  		};
 	};
 };
 
 class CfgMovesMaleSdr: CfgMovesBasic
 {
-  skeletonName = "OFP2_ManSkeleton";
-	gestures = "CfgGesturesMale";
-	access = 1;
   class StandBase;
 	class States
   {
   		class default;
   		class AnimCableCrouchStart : default
    		{
-   			file = "bnae_animations\anim_cable_crouch_start.rtm";
+   			file = QPATH(rtms\anim_cable_crouch_start.rtm);
   			looped = 0;
   			speed = 1;
   			duty = 2;
@@ -116,7 +113,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
    		};
   		class AnimCableCrouchLoop : AnimCableCrouchStart
    		{
-   			file = "bnae_animations\anim_cable_crouch_loop.rtm";
+   			file = QPATH(rtms\anim_cable_crouch_loop.rtm);
   			looped=1;
   			speed=0.1;
   			ConnectTo[]=
@@ -132,7 +129,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
    		};
   		class AnimCableCrouchToStand : AnimCableCrouchStart
    		{
-   			file = "bnae_animations\anim_cable_crouch_to_stand.rtm";
+   			file = QPATH(rtms\anim_cable_crouch_to_stand.rtm);
    		};
 
         class AmovPercMstpSnonWnonDnon: StandBase {

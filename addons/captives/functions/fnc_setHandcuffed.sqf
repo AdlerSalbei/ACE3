@@ -60,7 +60,15 @@ if (_state) then {
 
         if ((vehicle _unit) == _unit) then {
             [_unit] call EFUNC(common,fixLoweredRifleAnimation);
-            [_unit, "ACE_AmovPercMstpScapWnonDnon", 1] call EFUNC(common,doAnimation);
+            //[_unit, "ACE_AmovPercMstpScapWnonDnon", 1] call EFUNC(common,doAnimation);
+            [_unit, "AnimCableStandStart", 1] call EFUNC(common,doAnimation);
+            ACE_captivEH = _unit addEventHandler ["AnimDone", {
+            	params ["_unit", "_anim"];
+               diag_log format ["%1, %2", _unit, _anim];
+               if (_anim = "AnimCableStandStart") then {
+                  _unit removeEventHandler ["AnimDone", ACE_captivEH];
+               };
+            }];
         } else {
             [_unit, "ACE_HandcuffedFFV", 2] call EFUNC(common,doAnimation);
             [_unit, "ACE_HandcuffedFFV", 1] call EFUNC(common,doAnimation);

@@ -10,7 +10,9 @@ class CfgPatches {
         author = ECSTRING(common,ACETeam);
         authors[] = {"commy2", "KoffeinFlummi"};
         url = ECSTRING(main,URL);
-        VERSION_CONFIG;
+        version = "3.12.3.36";
+        versionStr = "3.12.3.36";
+        versionAr[] = {3,12,3,36};
     };
 };
 
